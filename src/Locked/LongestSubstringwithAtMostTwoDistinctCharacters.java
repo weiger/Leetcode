@@ -45,12 +45,18 @@ public class LongestSubstringwithAtMostTwoDistinctCharacters {
         int start = 0, j = -1, maxLen = 0;
         String res = "";
         for (int k = 1; k < s.length(); k++) {
+        	
+        	// duplicate characters
             if (s.charAt(k) == s.charAt(k - 1)) continue;
+            
+            // are not the same char
+            // 1) 
             if (j >= 0 && s.charAt(j) != s.charAt(k)) {
                 maxLen = Math.max(k - start, maxLen);
                 res = s.substring(start,k);
                 start = j + 1; 
             }
+            // 2)  move j to the previous position of current index
             j = k - 1;  
         }
         return Math.max(s.length() - start, maxLen);

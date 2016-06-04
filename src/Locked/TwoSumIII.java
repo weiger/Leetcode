@@ -31,6 +31,7 @@ public class TwoSumIII {
 	        
 	        if(map.containsKey(element)){
 	            
+	        	// check whether element and i are the same 
 	            if(i == element && map.get(element) < 2)
 	                continue;
 	                
